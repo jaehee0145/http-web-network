@@ -90,6 +90,7 @@
 - fragment : html 내부 북마크 
 
 ### 웹 브라우저 요청 흐름
+<img width="714" alt="Screenshot 2023-08-30 at 9 13 15 PM" src="https://github.com/jaehee0145/jaehee0145.github.io/assets/45681372/7337423a-711f-4fbb-bb8c-85e213bbdddd">
 
 1. 웹 브라우저에 URL 입력
 2. DNS 서버에 IP를 조회하고 생략된 PORT는 scheme으로 추론
