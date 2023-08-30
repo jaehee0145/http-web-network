@@ -18,20 +18,21 @@
 <img width="727" alt="Screenshot 2023-08-30 at 8 23 31 PM" src="https://github.com/jaehee0145/jaehee0145.github.io/assets/45681372/95d5ceb6-c213-40ad-a363-9c6a85691b3e">
 
 - 예시
-  1. 프로그램에서 메세지 생성
-  2. socket 라이브러리를 통해서 전달
-  3. OS 계층에서 TCP 정보 생성
-  4. IP 패킷 생성 
-  5. 랜카드를 통하면서 물리적인 정보를 포함해서 전송된다.
+ > 1. 프로그램에서 메세지 생성
+ > 2. socket 라이브러리를 통해서 전달
+ > 3. OS 계층에서 TCP 정보 생성
+ > 4. IP 패킷 생성 
+ > 5. 랜카드를 통하면서 물리적인 정보를 포함해서 전송된다.
 
-- TCP/IP 패킷 정보
+- TCP/IP 패킷에 포함된 정보
   - 출발지 port
   - 목적지 port
   - 전송 제어
   - 순서
-  - 검증 정보 등을 포함
+  - 검증 정보 등
+  
 - TCP 특징 : 전송제어 프로토콜(Transmission Control Protocol)
-  - 연결지향 - 3way handshake
+  - 연결 지향 - 3way handshake
     1. SYN : 접속 요청 
     2. SYN + ACK
     3. ACK : 요청 수락 (최적화되어서 데이터 전송이 함께 됨)
@@ -41,11 +42,12 @@
   - 순서 보장
     - TCP 정보 안에 순서 정보가 있어서 순차적으로 데이터를 받지 못하면 재전송 요청을 보낸다.
 
-- UDT (User Datagram Protocol 사용자 데이터그램 프로토콜)
+- UDP (User Datagram Protocol 사용자 데이터그램 프로토콜)
   - TCP는 데이터 양도 많고 3 way handshake 때문에 전송 속도가 느림 
   - UDP
     - 아무것도 없어서 상대적으로 전송 속도가 빠름
     - port 정보를 사용
+    - 최근에는 UDP를 최적화해서 사용하는 사례 많음
 
 ### PORT
 - 하나의 클라이언트가 여러개의 서버와 통신해야 하면? 
@@ -77,7 +79,7 @@
   - Identifier 다른 항목과 구분하는데 필요한 정보
 
 - URL 문법 
-> scheme://[userinfo@]host[:port][/path][?query][#fragment]
+> scheme://[userinfo@]host[:port][/path][?query][#fragment]  
 > https://www.google.com:443/search?q=hello&hl=ko
 
 - scheme : 주로 프로토콜 
@@ -134,6 +136,7 @@
   - TCP/IP 연결을 새로 맺어야 함 - 3way handshake 시간 추가
   - HTML 뿐 아니라 css, img 등 추가적인 자원
 - 지금은 HTTP 지속 연결 Persistent Connections
+  - 서버나 클라이언트가 명시적으로 연결을 close하거나 정책적으로 close하기 전까지 connection 유지
   - HTTP 2, 3에서는 최적화
 
 
@@ -142,7 +145,7 @@
 
 - start line
   - 요청 메시지 - request line 
-    - HTTP 메서드 + 요청 대상(절대 경로) + HTTP 버전
+    - HTTP 메서드 + 요청 대상(보통 절대 경로) + HTTP 버전
   - 응답 메시지 - status line
     - HTTP 버전 + HTTP 상태코드 
 
