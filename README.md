@@ -65,6 +65,56 @@
   - 클라이언트가 도메인 이름으로 요청을 보내면 IP가 변경되거나 몰라도 접속 가능 
 
 
+## 섹션 2 URI와 웹 브라우저 요청 흐름
+### URI
+- URI : URL, URN 상위 개념 
+  1. URL : Resource Locator
+  2. URN : Resource Name 
+
+- URI 뜻
+  - Uniform 리소스를 식별하는 통일된 방식
+  - Resource 자원, URI로 식별할 수 있는 모든 것 
+  - Identifier 다른 항목과 구분하는데 필요한 정보
+
+- URL 문법 
+> scheme://[userinfo@]host[:port][/path][?query][#fragment]
+> https://www.google.com:443/search?q=hello&hl=ko
+
+- scheme : 주로 프로토콜 
+  - http, https, ftp 등 
+- user info : 거의 사용하지 않음
+- host : 주로 도메인명, IP 주소
+- port : 웹 브라우저에서는 생략 
+  - http 80, https 443이 생략됨
+- query : key = value 형태
+- fragment : html 내부 북마크 
+
+### 웹 브라우저 요청 흐름
+
+1. 웹 브라우저에 URL 입력
+2. DNS 서버에 IP를 조회하고 생략된 PORT는 scheme으로 추론
+3. 웹 브라우저가 HTTP 요청 메시지 생성
+4. socket 라이브러리를 통해 서버와 TCP/IP 연결 
+5. HTTP 메세지 포함해 TCP/IP 패킷 생성
+6. 웹 브라우저의 요청으로 만들어진 패킷이 서버에 도착
+7. 서버에서 클라이언트로 HTTP 응답 메시지
+8. 웹 브라우저가 응답을 HTML 렌더링해서 표시 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
