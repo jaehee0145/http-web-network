@@ -237,7 +237,25 @@
   - Content-Type: application/json을 주로 사용(사실상 표준)
 
 ## 섹션6 HTTP 상태코드
+### 1xx(Informational) - 요청이 수신되어 처리중
+  - 거의 사용하지 않음 
 
+### 2xx(Successful) - 성공
+- 200 OK
+- 201 Created
+- 202 Accepted
+- 204 No Content
+  - 요청이 성공했지만 응답 페이로드 본문에 보낼 데이터가 없음
+
+### 3xx(Redirection) - 리다이렉션
+- 요청을 완료하기 위해 유저 에이전트의 추가 조치 필요
+- 302 메서드가 GET으로 변할 수 있음
+- 303 메서드가 GET으로 변경됨
+- 307 메서드가 변하면 안됨
+- 303, 307을 권장하지만 이미 많은 애플리케이션에서 302를 사용
+
+### 4xx(Client Error) - 클라이언트 오류
+### 5xx(Server Error) - 서버 오류
 
 ## 섹션7 HTTP 헤더1 - 일반 헤더
 ## 섹션8 HTTP 헤더2 - 캐시와 조건부 요청
